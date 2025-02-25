@@ -56,10 +56,12 @@ navigator.geolocation.getCurrentPosition(
       .then((response) => response.json())
       .then((data) => {
         const locationName = data.display_name || 'No location data';
+        const streetName = data.address.road || 'Street name not found';
         popup.innerHTML = `
           <div>
             <strong>Your Location:</strong><br />
             ${locationName}<br />
+            <strong>Street:</strong> ${streetName}<br />
             <strong>Coordinates:</strong> ${longitude.toFixed(6)}, ${latitude.toFixed(6)}
           </div>`;
         overlay.setPosition(userCoordinates);
