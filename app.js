@@ -70,7 +70,7 @@ navigator.geolocation.getCurrentPosition(
         popup.innerHTML = `
           <div>
             <strong>Your Location:</strong><br />
-            Location not found!.<br />
+            Location not found!<br />
             <strong>Coordinates:</strong> ${longitude.toFixed(6)}, ${latitude.toFixed(6)}
           </div>`;
         overlay.setPosition(userCoordinates);
@@ -80,7 +80,7 @@ navigator.geolocation.getCurrentPosition(
     Swal.fire({
       icon: 'error',
       title: 'Cannot find your location',
-      text: 'Make sure location permission allowed.',
+      text: 'Make sure location permission is allowed.',
     });
   }
 );
